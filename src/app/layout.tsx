@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { getServerSession } from "next-auth";
 import SessionProvider from "./components/SessionProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { ThemeProvider } from "@/components/providers/theme-provider"
 import "./globals.css";
 
 const geistSans = Geist({
@@ -36,15 +35,9 @@ export default async function RootLayout({
           <TooltipProvider>
             {/* <main className="mx-auto max-w-5xl text-2xl flex gap-2"> */}
             {/* <NavMenu /> */}
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
               {children}
               {/* </main> */}
-            </ThemeProvider>
+
           </TooltipProvider>
         </SessionProvider>
       </body>
